@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+       <dict>
+                <key>Label</key>
+                <string>org.mabam.ScreenWakener</string>
+                <key>LimitLoadToSessionType</key>
+                <array>
+                        <string>LoginWindow</string>
+                        <string>Aqua</string>
+                </array>
+                <key>ProgramArguments</key>
+                <array>
+                        <string>/bin/bash</string>
+                        <string>-c</string>
+                        <string>/usr/bin/plutil -convert xml1 -o - /Library/Preferences/com.apple.loginwindow.plist | /usr/bin/grep -q autoLoginUser; if [ $? -eq 0 ]; then [ $(/usr/bin/id -u) -ne 0 ]; else [ $(/usr/bin/id -u) -eq 0 ]; fi && /Applications/Screen\ Wakener.app/Contents/Resources/org.mabam.ScreenWakener.sh</string>
+                </array>
+                <key>RunAtLoad</key>
+                <true/>
+                <key>LaunchOnlyOnce</key>
+                <true/>
+        </dict>
+</plist>
