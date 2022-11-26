@@ -465,7 +465,7 @@ else
 		end if
 		if userChoice2 = buttonCancel then error number -128 -- stop script execution
 		if userChoice2 = buttonStartLogging then
-			do shell script "echo \"logFile=" & escapedPOSIXAppPath & "Contents/Resources/ScreenWakenerLog.txt\" > " & quotedPOSIXAppPath & "Contents/Resources/ScreenWakenerLogSwitch"
+			do shell script "echo \"logFile=" & escapedPOSIXAppPath & "Contents/Resources/ScreenWakenerLog.txt\" > " & quotedPOSIXAppPath & "Contents/Resources/ScreenWakenerLogSwitch; : | /usr/bin/tee -a " & quotedPOSIXAppPath & "Contents/Resources/ScreenWakenerLog.txt"
 		end if
 		if userChoice2 = "buttonDefRemove" then scriptRemoveSW()
 	end if
