@@ -2,16 +2,18 @@
 
 ### Description
 
-A work-around intended for Hackintosh machines with a screen that stays black after boot (only if the screen can be activated by, e. g. changing settings through “System Preferences” ▸ “Displays”).
+A work-around intended for Hackintosh machines with a screen that stays black after boot (only if the screen can be activated by, e. g. changing settings through “System Preferences” ▸ “Displays”). Or if you have a setup with multiple screens but they are distorted.
 
 If the above is not the case for you, and your screen does not appear under “Arrangement“ in “System Preferences” ▸ “Displays” (which you can access if at least one screen is working – try VGA or Display Port if DVI and HDMI result in a black screen), I explicitly recommend the [General Framebuffer Patching Guide (HDMI Black Screen Problem)](https://www.tonymacx86.com/threads/guide-general-framebuffer-patching-guide-hdmi-black-screen-problem.269149/). It is very clear and thorough and, once I had found it after a long journey, helped me fix my black screen problem (before it was visible in System Preferences). Also, CaseySJ offers a very good support there.
 
-Furthermore, before using “Screen Wakener”, it is recommended to first patch the EDID. There is [this script](https://gist.github.com/ejdyksen/8302862) (only connect one screen at a time) and [this manual guide](https://www.tonymacx86.com/threads/override-edid-for-display-problem.47200/). I also came across a script that works with multiple screens somewhere, but I didn’t take note of the URL, unfortunately.
+Furthermore – except if you use OpenCore as boot loader (which automagically takes care of the EDID) – it is recommended to first patch the EDID before using “Screen Wakener”. There is [this script](https://gist.github.com/ejdyksen/8302862) (only connect one screen at a time) and [this manual guide](https://www.tonymacx86.com/threads/override-edid-for-display-problem.47200/). I also came across a script that works with multiple screens somewhere, but I didn’t take note of the URL, unfortunately.
 
 
 ### Usage
 
 Download “ScreenWakener.dmg” at https://github.com/mabam/ScreenWakener/releases and copy the app within it to your system’s Applications folder. Instructions are provided as you run the app.
+
+Please note that, in case you have a multi screen setup where your displays suffer from distortion, you might need to play with which screen to select in Screen Wakener.
 
 Use at own risk.
 
@@ -24,7 +26,7 @@ Currently only works with an iGPU and for one “Black Screen” at a time. If y
 
 **After configuration is done, “Screen Wakener” will activate your “Black Screen” before login or after (if you have enabled “auto-login” in System Preferences).**
 
-Written and tested on macOS High Sierra.
+Written on macOS High Sierra. Also tested on Catalina and Ventura.
 
 
 ### Credits go to:
